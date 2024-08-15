@@ -32,11 +32,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
   int _selectedIndex = 0;
 
+  int _counter = 0;
+
+  void _incremnetCounter(){
+    setState(() {
+      _counter++;
+    });
+  }
+  void _decremnetCounter(){
+    setState(() {
+      _counter--;
+    });
+  }
+
+
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
+
 
   List<String> screens = [
     'Home Screen',
@@ -51,14 +68,29 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Flutter Demo Home Page'),
       ),
-      body: Center(
-          child: Text(
-        screens[_selectedIndex],
-        style: TextStyle(fontSize: 50),
-      )),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.add),
+      body: Column(
+        children: [
+          Center(
+              child: Text(
+            screens[_selectedIndex],
+            style: TextStyle(fontSize: 50),
+          )),
+          Text(_counter.toString(), style: TextStyle(fontSize: 50),),
+        ],
+      ),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: _incremnetCounter,
+            child: Icon(Icons.add),
+          ),
+          SizedBox(height: 10,),
+          FloatingActionButton(
+            onPressed: _decremnetCounter,
+            child: Icon(Icons.remove),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
@@ -88,10 +120,10 @@ class _MyHomePageState extends State<MyHomePage> {
           padding: EdgeInsets.zero,
           children: const [
             DrawerHeader(
-                child: Text('Drawer Header'),
               decoration: BoxDecoration(
                 color: Colors.blueGrey
               ),
+              child: Text('Drawer Header'),
             ),
             ListTile(title: Text('Item 1'),),
             ListTile(title: Text('Item 2'),),
