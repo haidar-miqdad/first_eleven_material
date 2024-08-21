@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
 class GridViewWidget extends StatelessWidget {
   const GridViewWidget({super.key});
 
@@ -41,4 +40,3 @@ class GridViewWidget extends StatelessWidget {
     );
   }
 }
-
