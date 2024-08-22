@@ -8,6 +8,9 @@ class GridViewBuilderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Elevated Button'),
+      ),
       body: GridView.builder(
         itemCount: 20,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

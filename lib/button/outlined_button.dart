@@ -8,6 +8,9 @@ class OutlinedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Elevated Button'),
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -18,7 +21,7 @@ class OutlinedButtonWidget extends StatelessWidget {
             ),
             const SizedBox(height: 20,),
             OutlinedButton(
-              onPressed: () {  },
+              onPressed: () {},
               style: OutlinedButton.styleFrom(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
