@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class GridViewBuilderWidget extends StatelessWidget {
@@ -8,22 +6,22 @@ class GridViewBuilderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Elevated Button'),
-      ),
-      body: GridView.builder(
-        itemCount: 20,
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4, // buat 3 kolom
-            mainAxisSpacing: 50, // jarak antar baris
-            crossAxisSpacing: 10, // jarak antar kolom
-            childAspectRatio: 1 // lebar / tinggi
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: GridView.builder(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              childAspectRatio: 1
+          ),
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              color: Colors.brown,
+            );
+          },
+          itemCount: 20,
         ),
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            color: Colors.blueGrey,
-          );
-        },
       ),
     );
   }

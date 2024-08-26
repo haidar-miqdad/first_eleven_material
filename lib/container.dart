@@ -1,5 +1,7 @@
 
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ContainerWidget extends StatelessWidget {
   const ContainerWidget({super.key});
@@ -12,20 +14,19 @@ class ContainerWidget extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          width: 200,
-          height: 200,
+          width: 200.0,
+          height: 200.0,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.black,
-            border: Border.all(color: Colors.grey, width: 5),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.5),
-                blurRadius: 15,
-                offset: const Offset(5, 5),
-                spreadRadius: 1,
-              ),
-            ],
+            color: Colors.green,
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          child: Text(
+            'eleven grade class in the third floor',
+            style: GoogleFonts.roboto(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Colors.green,
+            ),
           ),
         ),
       ),

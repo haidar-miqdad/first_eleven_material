@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class ListViewSeparatedWidget extends StatelessWidget {
@@ -8,30 +6,28 @@ class ListViewSeparatedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Elevated Button'),
-      ),
       body: Center(
         child: SizedBox(
           height: 200,
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
-            itemBuilder: (BuildContext context,int index){
+            itemBuilder: (BuildContext context, int index) {
               return Container(
-                height: 200,
                 width: 200,
-                color: Colors.amberAccent,
+                height: 200,
+                color: Colors.green,
               );
             },
-            separatorBuilder: (context, index){
+            itemCount: 10,
+            separatorBuilder: (BuildContext context, int index) {
               return const SizedBox(
                 width: 20,
               );
             },
-            itemCount: 10,
           ),
         ),
       ),
     );
   }
 }
+

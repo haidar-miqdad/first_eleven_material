@@ -8,12 +8,12 @@ class GridViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gridview Widget'),
+        title: const Text('Gridview Widget'),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.home),
+          icon: const Icon(Icons.home),
         )),
       body: GridView(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

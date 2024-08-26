@@ -1,6 +1,5 @@
 
 
-import 'package:first_eleven_material/container.dart';
 import 'package:flutter/material.dart';
 
 class RowWidget extends StatelessWidget {
@@ -9,15 +8,6 @@ class RowWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Row Widget'),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.arrow_back_ios_new),
-        ),
-      ),
       body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,17 +17,17 @@ class RowWidget extends StatelessWidget {
               height: 100,
               color: Colors.red,
             ),
-            const SizedBox(width: 10,),
+            const SizedBox(width: 20,),
             Container(
               width: 100,
               height: 100,
-              color: Colors.red,
+              color: Colors.green,
             ),
-            const SizedBox(width: 10,),
+            const SizedBox(width: 20,),
             Container(
               width: 100,
               height: 100,
-              color: Colors.red,
+              color: Colors.yellow,
             ),
           ],
         ),
@@ -45,3 +35,5 @@ class RowWidget extends StatelessWidget {
     );
   }
 }
+
+
