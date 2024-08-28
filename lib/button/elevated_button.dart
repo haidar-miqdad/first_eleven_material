@@ -16,9 +16,6 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Elevated Button'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -27,9 +24,9 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
               onPressed: null,
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10)
                   ),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.blueAccent,
                   foregroundColor: Colors.white
               ),
               child: const Text('Elevated Button disabled'),
@@ -43,18 +40,43 @@ class _ElevatedButtonWidgetState extends State<ElevatedButtonWidget> {
               },
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10)
                   ),
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.blueAccent,
                   foregroundColor: Colors.white
               ),
-              child: const Text('Elevated Button enabled'),
+              child: const Text('Elevated Button enabled increment'),
             ),
-            Text(counter.toString())
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  counter--;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                  ),
+                  backgroundColor: Colors.blueAccent,
+                  foregroundColor: Colors.white
+              ),
+              child: const Text('Elevated Button enabled decrement'),
+            ),
+            Text(counter.toString(), style: const TextStyle(fontSize: 20),)
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
+
+
+
+
+
+
 

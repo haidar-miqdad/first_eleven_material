@@ -8,27 +8,29 @@ class OutlinedButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Elevated Button'),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const OutlinedButton(
+            OutlinedButton(
               onPressed: null,
-              child: Text('OutlinedButton disabled'),
+              style: OutlinedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                  )
+              ),
+              child: const Text('Outlined Button disabled'),
             ),
             const SizedBox(height: 20,),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {  },
               style: OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                foregroundColor: Colors.green,
+                  padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                  )
               ),
-              child: const Text('OutlinedButton enabled'),
+              child: const Text('Outlined Button enabled'),
             ),
           ],
         ),
@@ -36,5 +38,3 @@ class OutlinedButtonWidget extends StatelessWidget {
     );
   }
 }
-
-
